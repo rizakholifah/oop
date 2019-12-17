@@ -2,6 +2,7 @@ public class App{
     public static void main(String[] args){
         //Membuat objek (Instansiasi/Instance)
         //NamaClass namaObject = new Constructor() //Constructor biasanya adalah nama class
+        boolean mesinOn = true;
 
         mobil MobilBMW = new mobil(); //We had an objcet named "MobilBMW"
         MobilBMW.merk = "BMW"; //Isi Attribute
@@ -16,17 +17,15 @@ public class App{
         MobilNissan.platnomor = "B 26 RD";
         MobilNissan.jumlahRoda = 4;
         MobilNissan.jumlahPintu = 5;
-
-        System.out.println();
-        System.out.println(MobilBMW.merk);//Penggunaan Attribute
-        MobilBMW.nyalakanMesin();
-        MobilBMW.maju();
-        System.out.println();
-        System.out.println(MobilNissan.merk);
-        MobilNissan.nyalakanMesin();
-        MobilNissan.maju();
-        MobilNissan.mundur();
-
+        
+        if(mesinOn == true){
+            System.out.println(MobilNissan.merk);
+            MobilNissan.maju();
+        }
+        else{
+            System.out.println(MobilNissan.merk);
+            System.out.println("Mesin Belum Menyala");
+        }
     }
 }
 
@@ -37,6 +36,7 @@ class mobil{
     String platnomor;
     int jumlahRoda;
     int jumlahPintu;
+
 
     //method
     void nyalakanMesin(){
@@ -49,6 +49,6 @@ class mobil{
     }
     void mundur(){
         //code mobil mundur
-        System.out.println("Mobil Mundur");
+       System.out.println("Mobil Mundur");
     }
 }
